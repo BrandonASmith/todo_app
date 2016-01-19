@@ -20,6 +20,16 @@ function create (req, res, next) {
 	})
 }
 
+function show (req, res) {
+	Todo.find({id: req.body.id}, function(err, todo) {
+		if(err) console.log(err)
+		res.redirect('/todos/:id')
+	})
+}
+
+
+
+
 module.exports = {
 	index: index,
 	create: create
