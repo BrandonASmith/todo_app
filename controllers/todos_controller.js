@@ -21,13 +21,20 @@ function create (req, res, next) {
 }
 
 function show (req, res) {
-	Todo.find({id: req.body.id}, function(err, todo) {
+	Todo.find({_id: req.body.id}, function(err, todo) {
 		if(err) console.log(err)
 		res.redirect('/todos/:id')
+	//this whole action might be wrong
 	})
 }
 
-
+function update (req, res) {
+	Todo.findOneAndUpdate({title: req.body.title}, {description: req.body.description}, {priority: req.body.priority}, {date: req.body.date}, function (err, todo) {
+		if(err) console.log(err)
+		res.redirect('/todos/:id')
+	//this whole action might be wrong
+	} 
+}
 
 
 module.exports = {
