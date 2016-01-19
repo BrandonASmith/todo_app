@@ -31,7 +31,7 @@ function show (req, res) {
 function update (req, res) {
 	Todo.findOneAndUpdate({title: req.body.title}, {description: req.body.description}, {priority: req.body.priority}, {date: req.body.date}, function (err, todo) {
 		if(err) console.log(err)
-		res.redirect('/todos/:id')
+		res.redirect('/todos')
 	//this whole action might be wrong
 	} 
 }
