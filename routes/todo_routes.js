@@ -11,3 +11,5 @@ todoRouter.route('/todos/:id')
 	.put(todosController.update)
 	.get(todosController.show)
 	.delete(todosController.destroy)
+
+module.exports = todoRouter
