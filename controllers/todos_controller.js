@@ -19,3 +19,8 @@ function create (req, res, next) {
 		res.redirect('/todos')
 	})
 }
+
+module.exports = {
+	index: index,
+	create: create
+}
