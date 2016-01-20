@@ -12,4 +12,4 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
 app.listen(port)
-console.log('The server is running on port' + port)
+console.log('The server is running on port ' + port)
