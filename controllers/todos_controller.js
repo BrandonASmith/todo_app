@@ -48,8 +48,18 @@ function update (req, res) {
 	
 }
 
+function destroy (req, res) {
+	var id = req.params.id;
+
+	Todo.remove({_id: id}, function (err) { 
+		if(err) console.log(err)
+	})
+}
+
 
 module.exports = {
 	index: index,
-	create: create
+	create: create,
+	update: update,
+	destroy: destroy
 }
