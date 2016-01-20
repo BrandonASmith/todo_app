@@ -1,5 +1,6 @@
 var express = require('express'),
-	todoRouter = express.Router()
+	todoRouter = express.Router(),
+	todosController = require('../controllers/todos_controller.js')
 
 todoRouter.route('/todos')
 	.get(todosController.index)
