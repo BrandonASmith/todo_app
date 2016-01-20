@@ -1,0 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway|Lobster);
+
+body {
+	font-family: 'Raleway', sans-serif;
+	background-image: url('http://cliparts.co/cliparts/Lcd/oqp/LcdoqpLni.jpg');
+}
+
+h1, h3 {
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	color: white;
+}
+
+.container {
+	width: 75%;
+	background-color: white;
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+.title {
+	background-color: black;
+}

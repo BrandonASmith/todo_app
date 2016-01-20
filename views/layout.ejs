@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do App</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/main.css" /></head>
+<body>
+    <div class="container">
+    <% for(var i=0; i< todos.length; i++) {  %>
+    <ul>
+      <li><b>Title : </b> <%= todos[i].make %></li>
+      <li><b>Description : </b> <%= todos[i].model %></li>
+      <li><b>Priority : </b> <%= todos[i].color %></li>
+      <li><b>Date : </b> <%= todos[i].year %></li>
+    </ul>
+    <% } %>
+    </div>
+
+    <hr>
+    <div class="container">
+        <% include ./partials/todo/form %>
+    </div>
+
+</body>
+</html>
