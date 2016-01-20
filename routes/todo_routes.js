@@ -1,7 +1,5 @@
-var mongoose = require('mongoose'),
-	express = require('express'),
-	todoRouter = express.Router(),
-	bodyParser = require('body-parser')
+var express = require('express'),
+	todoRouter = express.Router()
 
 todoRouter.route('/todos')
 	.get(todosController.index)
