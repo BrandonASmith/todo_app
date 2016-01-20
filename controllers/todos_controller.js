@@ -20,20 +20,32 @@ function create (req, res, next) {
 	})
 }
 
-function show (req, res) {
-	Todo.find({_id: req.body.id}, function(err, todo) {
-		if(err) console.log(err)
-		res.redirect('/todos/:id')
-	//this whole action might be wrong
-	})
-}
+// function show (req, res) {
+// 	Todo.find({_id: req.body.id}, function(err, todo) {
+// 		if(err) console.log(err)
+// 		res.redirect('/todos')
+// 	//this whole action might be wrong
+// 	})
+// }
 
 function update (req, res) {
-	Todo.findOneAndUpdate({title: req.body.title}, {description: req.body.description}, {priority: req.body.priority}, {date: req.body.date}, function (err, todo) {
+	var id = req.params.id;
+
+	Todo.findById({_id: id}, function(err, todo) {
 		if(err) console.log(err)
-		res.redirect('/todos/:id')
-	//this whole action might be wrong
-	} 
+
+		if(req.body.title) todo.title = req.body.title
+		if(req.body.description) todo.description = req.body.description
+		if(req.body.priority) todo.priority = req.body.priority
+		if(req.body.date) body.priority = req.body.priority
+
+		todo.save(function(err) {
+			if(err) console.log(err)
+			console.log("succesful update!")
+		})
+
+	})
+	
 }
 
 
